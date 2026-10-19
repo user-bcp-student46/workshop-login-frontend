@@ -36,7 +36,7 @@
       {{ busy ? 'Ingresando...' : 'Ingresar' }}
     </button>
 
-    <div class="message" *ngIf="message" [innerHTML]="message"></div>
+    <div class="message" *ngIf="message"><strong *ngIf="validationMessage; else normalMessage">{{ message }}</strong><ng-template #normalMessage>{{ message }}</ng-template></div>
 
     <small>Laboratorio local. No utilices credenciales reales.</small>
   </section>
